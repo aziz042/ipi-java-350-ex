@@ -87,7 +87,12 @@ public class EmployeService {
      *
      * @throws EmployeException Si le matricule est null ou ne commence pas par un C
      */
-    public void calculPerformanceCommercial(String matricule, Long caTraite, Long objectifCa) throws EmployeException {
+  public void calculPerformanceCommercial(String matricule, Long caTraite, Long objectifCa) throws EmployeException {
+
+    verifierCa(caTraite);
+    verifierObjectif(objectifCa);
+    verifierMatricule(matricule);
+
         //Vérification des paramètres d'entrée
         if(caTraite == null || caTraite < 0){
             throw new EmployeException("Le chiffre d'affaire traité ne peut être négatif ou null !");
