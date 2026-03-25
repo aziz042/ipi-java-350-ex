@@ -63,14 +63,14 @@ public class Employe {
         int var = 104;
      switch (LocalDate.of(d.getYear(),1,1).getDayOfWeek()) {
     case THURSDAY:
-        if(d.isLeapYear()) var = var + 1;
+        if(d.isLeapYear())joursOuvres = joursOuvres + 1;
         break;
     case FRIDAY:
-        if(d.isLeapYear()) var = var + 2;
-        else var = var + 1;
+        if(d.isLeapYear()) joursOuvres = + 2;
+        else joursOuvres = joursOuvres + 1;
         break;
     case SATURDAY:
-        var = var + 1;
+      joursOuvres = joursOuvres + 1;
         break;
     default:
         break; // important pour SonarCloud
